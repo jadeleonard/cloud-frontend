@@ -9,8 +9,8 @@ const Navbar = () => {
 
   const navbar = [
     {"name":"Home","href":"/"},
-    {"name":"Sign In","href":"/sign-in"},
-    {"name":"Sign Up","href":"/sign-up"},
+    {"name":"My Profile","href":"/sign-in"},
+    {"name":"My Kart","href":"/sign-up"},
     {"name":"About","href":"/about"},
   ]
   return (
@@ -31,29 +31,24 @@ const Navbar = () => {
             ))
           }
       </ul>
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant={"ghost"} size={"sm"}>
-      <Avatar>
-        <AvatarImage src='https://github.com/shadcn.png' />
-      </Avatar>
+      <Button variant={"secondary"} size={"sm"} className='w-[200px] inline-flex gap-6 '>
+          Search
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+</svg>
+
+
       </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent>
-        <DropdownMenuItem>
-          Profile
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          Settings
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          My Kart
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          About
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-      </DropdownMenu>
+          <ul className='hidden sm:inline-flex gap-2 items-center capitalize text-sm mx-auto'>
+            <li>
+              <Link to={''}>Sign In</Link>
+            </li>
+            <li>
+              <Link to={''}>
+                <Button variant={'secondary'} size={'sm'}>Sign Up</Button>
+              </Link>
+            </li>
+          </ul>
     </div>
   )
 }
